@@ -8,6 +8,7 @@ import com.github.shynixn.petblocks.lib.BukkitUtilities;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -258,27 +259,37 @@ public final class ConfigGUI {
                         i = 1;
                     }
                     for (; i < parts.length; i++) {
+                    	boolean isUnbreakable = false;
                         if (parts[i].equalsIgnoreCase("unbreakable")) {
                             Map<String, Object> data = new HashMap<>();
                             data.put("Unbreakable", true);
                             itemStack = NMSRegistry.setItemStackTag(itemStack, data);
+                            
+                            isUnbreakable = true;
                         }
-                        if (parts[i].equalsIgnoreCase("lore")) {
-                            i++;
-                            List<String> lore = new ArrayList<>();
-                            for (; i < parts.length; i++) {
-                                if (parts[i].equalsIgnoreCase("unbreakable")) {
-                                    i--;
-                                    break;
-                                } else {
-                                    lore.add(ChatColor.translateAlternateColorCodes('&', parts[i]));
-                                }
-                            }
-                            if (itemStack != null) {
-                                ItemMeta meta = itemStack.getItemMeta();
-                                meta.setLore(lore);
-                                itemStack.setItemMeta(meta);
-                            }
+	                    
+                        if(itemStack != null && (isUnbreakable || parts[i].equalsIgnoreCase("lore"))) {
+	                        ItemMeta meta = itemStack.getItemMeta();
+	                        if (parts[i].equalsIgnoreCase("lore")) {
+		                        i++;
+		                        List<String> lore = new ArrayList<>();
+		                        for (; i < parts.length; i++) {
+			                        if (parts[i].equalsIgnoreCase("unbreakable")) {
+				                        i--;
+				                        break;
+			                        } else {
+				                        lore.add(ChatColor.translateAlternateColorCodes('&', parts[i]));
+			                        }
+		                        }
+		                        
+		                        meta.setLore(lore);
+	                        }
+	                        
+	                        if(isUnbreakable) {
+	                        	meta.addItemFlags(ItemFlag.HIDE_UNBREAKABLE);
+	                        }
+	
+	                        itemStack.setItemMeta(meta);
                         }
                     }
                     if (skull) {
