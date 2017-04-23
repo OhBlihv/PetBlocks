@@ -155,7 +155,7 @@ join:
 
 # Chat settings
 
-# Async -> Handle chat messages asynchronly.
+# Async -> Handle chat messages asynchronously.
 # Highest-priority -> Give petblock messages the highest priority.
 
 chat:
@@ -164,7 +164,7 @@ chat:
 
 # GUI settings
 
-# settings: Copy-skin --> Copies the skin of the clicket pet soul
+# settings: Copy-skin --> Copies the skin of the clicked pet soul
 # settings: Lore --> Displays lore lines in the GUI.
 # settings: Click-empty-slot-back --> Allows to return to the previous menu by clicking a dummy slot.
 
@@ -176,9 +176,9 @@ chat:
 # general: enable-pet --> All settings for the item previous page
 # general: enable-pet --> All settings for the item next page
 
-# items: default-costume --> All settings for the item costume categorie default
-# items: default-costume --> All settings for the item costume categorie color
-# items: default-costume --> All settings for the item costume categorie costume
+# items: default-costume --> All settings for the item costume category default
+# items: default-costume --> All settings for the item costume category color
+# items: default-costume --> All settings for the item costume category costume
 # item: ...
 
 # souls: pig-soul -> All settings for the item soul pig
@@ -542,9 +542,9 @@ gui:
 
 # Costumes settings
 
-# default --> All ids (including damage or owner) for the categorie default
-# color --> All ids (including damage or owner) for the categorie color
-# custom --> All ids (including damage or owner) for the categorie custom
+# default --> All ids (including damage or owner) for the category default
+# color --> All ids (including damage or owner) for the category color
+# custom --> All ids (including damage or owner) for the category custom
 
 # How to add a lore?
 # Samples:
