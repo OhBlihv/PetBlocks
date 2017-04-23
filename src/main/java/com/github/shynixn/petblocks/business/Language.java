@@ -73,6 +73,7 @@ public final class Language {
             SNAME_MESSAGE = ChatColor.translateAlternateColorCodes('&', config.getString("skullnaming-message"));
             SNAME_SUCCESS_MESSAGE = ChatColor.translateAlternateColorCodes('&', config.getString("skullnaming-success"));
             SNAME_ERROR_MESSAGE = ChatColor.translateAlternateColorCodes('&', config.getString("skullnaming-error"));
+	        SNAME_FORMATTING_ERROR_MESSAGE = ChatColor.translateAlternateColorCodes('&', config.getString("skullnaming-formatting-error", SNAME_FORMATTING_ERROR_MESSAGE));
 
             CANNON = ChatColor.translateAlternateColorCodes('&', config.getString("cannon"));
             SKULL_NAMING = ChatColor.translateAlternateColorCodes('&', config.getString("skin"));
@@ -171,6 +172,7 @@ public final class Language {
     public static String SNAME_MESSAGE = ChatColor.YELLOW + "Enter the name the of your pet:";
     public static String SNAME_SUCCESS_MESSAGE = ChatColor.GREEN + "You changed the name of your pet.";
     public static String SNAME_ERROR_MESSAGE = ChatColor.RED + "You cannot name your pet like that.";
+    public static String SNAME_FORMATTING_ERROR_MESSAGE = ChatColor.RED + "You do not have permission to use this formatting code.";
 
     private static String DEFAULT_PETNAME = ":player's pet";
 

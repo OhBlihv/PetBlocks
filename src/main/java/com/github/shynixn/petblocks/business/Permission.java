@@ -4,6 +4,7 @@ public enum Permission {
     ALLPETTYPES("petblocks.pet.type.all"),
     SINGLEPETTYPE("petblocks.pet.type."),
     RENAMEPET("petblocks.pet.rename"),
+    RENAMEPET_FORMATTING("petblocks.pet.rename.formatting"),
     RENAMESKULL("petblocks.pet.skin"),
     CANNON("petblocks.pet.cannon"),
     RIDEPET("petblocks.pet.ride"),

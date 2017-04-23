@@ -5,6 +5,7 @@ import com.github.shynixn.petblocks.api.entities.PetBlock;
 import com.github.shynixn.petblocks.api.entities.PetMeta;
 import com.github.shynixn.petblocks.api.entities.PetType;
 import com.github.shynixn.petblocks.business.Language;
+import com.github.shynixn.petblocks.business.Permission;
 import com.github.shynixn.petblocks.business.bukkit.nms.NMSRegistry;
 import com.github.shynixn.petblocks.business.logic.configuration.ConfigCommands;
 import com.github.shynixn.petblocks.business.logic.configuration.ConfigGUI;
@@ -207,6 +208,11 @@ class PetBlockCommandExecutor extends DynamicCommandHelper {
     private void namePetCommand(Player player, String name) {
         try {
             if (PetBlocksApi.hasPetMeta(player)) {
+	            if(name.contains("&k") && !player.hasPermission(Permission.RENAMEPET_FORMATTING.get())) {
+	                player.sendMessage(Language.PREFIX + Language.SNAME_FORMATTING_ERROR_MESSAGE);
+	                return;
+	            }
+            	
                 final PetMeta petMeta = PetBlocksApi.getPetMeta(player);
                 petMeta.setDisplayName(name);
                 final PetBlock petBlock;
