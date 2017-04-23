@@ -2,7 +2,6 @@ package com.github.shynixn.petblocks.business.logic.configuration;
 
 import com.github.shynixn.petblocks.api.entities.ItemContainer;
 import com.github.shynixn.petblocks.api.entities.PetType;
-import com.github.shynixn.petblocks.business.Language;
 import com.github.shynixn.petblocks.business.bukkit.nms.NMSRegistry;
 import com.github.shynixn.petblocks.lib.BukkitUtilities;
 import org.bukkit.ChatColor;
@@ -307,9 +306,28 @@ public final class ConfigGUI {
                 e.printStackTrace();
             }
         }
-        for (int i = 0; i < itemStacks.size(); i++) {
-            BukkitUtilities.nameItemDisplay(itemStacks.get(i), Language.NUMBER_PREFIX + "" + i + "");
-        }
+	    for(ItemStack itemStack : itemStacks) {
+		    BukkitUtilities.nameItemDisplay(itemStack, capitaliseAllFirst(itemStack.getType().name().replace("_", " ")));
+	    }
         return itemStacks.toArray(new ItemStack[0]);
     }
+	
+	public static String capitaliseFirst(String string)
+	{
+		return Character.toTitleCase(string.charAt(0)) + string.substring(1, string.length());
+	}
+	
+	public static String capitaliseAllFirst(String string)
+	{
+		StringBuilder stringBuilder = new StringBuilder();
+		
+		String[] split = string.split(" ");
+		for(String splitWord : split)
+		{
+			stringBuilder.append(capitaliseFirst(splitWord)).append(" ");
+		}
+		
+		return stringBuilder.toString().substring(0, stringBuilder.length() - 1);
+	}
+ 
 }
