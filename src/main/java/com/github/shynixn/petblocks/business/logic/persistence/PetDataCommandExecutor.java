@@ -47,7 +47,7 @@ class PetDataCommandExecutor extends DynamicCommandHelper {
                     final PetBlock petBlock;
                     if ((petBlock = PetBlocksApi.getPetBlock(player)) != null)
                         petBlock.respawn();
-                    player.sendMessage(Language.PREFIX + Language.NAME_SUCCES_MESSAGE);
+                    player.sendMessage(Language.PREFIX + Language.NAME_SUCCESS_MESSAGE);
                 } catch (final Exception e) {
                     player.sendMessage(Language.PREFIX + Language.NAME_ERROR_MESSAGE);
                 }
@@ -62,7 +62,7 @@ class PetDataCommandExecutor extends DynamicCommandHelper {
                     final PetBlock petBlock;
                     if ((petBlock = PetBlocksApi.getPetBlock(player)) != null)
                         petBlock.respawn();
-                    player.sendMessage(Language.PREFIX + Language.SNAME_SUCCES_MESSAGE);
+                    player.sendMessage(Language.PREFIX + Language.SNAME_SUCCESS_MESSAGE);
                 } catch (final Exception e) {
                     player.sendMessage(Language.PREFIX + Language.SNAME_ERROR_MESSAGE);
                 }

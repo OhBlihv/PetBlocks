@@ -308,7 +308,7 @@ class PetDataListener extends BukkitEvents {
                     }
                     if ((petBlock = PetBlocksApi.getPetBlock(event.getPlayer())) != null)
                         petBlock.respawn();
-                    event.getPlayer().sendMessage(Language.PREFIX + Language.NAME_SUCCES_MESSAGE);
+                    event.getPlayer().sendMessage(Language.PREFIX + Language.NAME_SUCCESS_MESSAGE);
                 } catch (final Exception e) {
                     event.getPlayer().sendMessage(Language.PREFIX + Language.NAME_ERROR_MESSAGE);
                 }
@@ -327,7 +327,7 @@ class PetDataListener extends BukkitEvents {
                     }
                     if ((petBlock = PetBlocksApi.getPetBlock(event.getPlayer())) != null)
                         petBlock.respawn();
-                    event.getPlayer().sendMessage(Language.PREFIX + Language.SNAME_SUCCES_MESSAGE);
+                    event.getPlayer().sendMessage(Language.PREFIX + Language.SNAME_SUCCESS_MESSAGE);
                 } catch (final Exception e) {
                     event.getPlayer().sendMessage(Language.PREFIX + Language.SNAME_ERROR_MESSAGE);
                 }

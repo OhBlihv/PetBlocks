@@ -1,17 +1,16 @@
 package com.github.shynixn.petblocks.business;
 
-import java.io.File;
-import java.lang.reflect.Field;
-
+import com.github.shynixn.petblocks.business.bukkit.PetBlocksPlugin;
+import com.github.shynixn.petblocks.lib.BukkitChatColor;
+import com.github.shynixn.petblocks.lib.BukkitUtilities;
 import org.bukkit.ChatColor;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.github.shynixn.petblocks.business.bukkit.PetBlocksPlugin;
-import com.github.shynixn.petblocks.lib.BukkitChatColor;
-import com.github.shynixn.petblocks.lib.BukkitUtilities;
+import java.io.File;
+import java.lang.reflect.Field;
 
 public final class Language {
     public static void reload(JavaPlugin plugin) {
@@ -68,11 +67,11 @@ public final class Language {
             UNMUTE = ChatColor.translateAlternateColorCodes('&', config.getString("enable-sound"));
 
             NAME_MESSAGE = ChatColor.translateAlternateColorCodes('&', config.getString("naming-message"));
-            NAME_SUCCES_MESSAGE = ChatColor.translateAlternateColorCodes('&', config.getString("naming-success"));
+            NAME_SUCCESS_MESSAGE = ChatColor.translateAlternateColorCodes('&', config.getString("naming-success"));
             NAME_ERROR_MESSAGE = ChatColor.translateAlternateColorCodes('&', config.getString("naming-error"));
 
             SNAME_MESSAGE = ChatColor.translateAlternateColorCodes('&', config.getString("skullnaming-message"));
-            SNAME_SUCCES_MESSAGE = ChatColor.translateAlternateColorCodes('&', config.getString("skullnaming-success"));
+            SNAME_SUCCESS_MESSAGE = ChatColor.translateAlternateColorCodes('&', config.getString("skullnaming-success"));
             SNAME_ERROR_MESSAGE = ChatColor.translateAlternateColorCodes('&', config.getString("skullnaming-error"));
 
             CANNON = ChatColor.translateAlternateColorCodes('&', config.getString("cannon"));
@@ -166,11 +165,11 @@ public final class Language {
     public static String UNMUTE = BukkitChatColor.YELLOW + "Unmute Pet";
 
     public static String NAME_MESSAGE = ChatColor.YELLOW + "Enter the name the of your pet:";
-    public static String NAME_SUCCES_MESSAGE = ChatColor.GREEN + "You changed the name of your pet.";
+    public static String NAME_SUCCESS_MESSAGE = ChatColor.GREEN + "You changed the name of your pet.";
     public static String NAME_ERROR_MESSAGE = ChatColor.RED + "You cannot name your pet like that.";
 
     public static String SNAME_MESSAGE = ChatColor.YELLOW + "Enter the name the of your pet:";
-    public static String SNAME_SUCCES_MESSAGE = ChatColor.GREEN + "You changed the name of your pet.";
+    public static String SNAME_SUCCESS_MESSAGE = ChatColor.GREEN + "You changed the name of your pet.";
     public static String SNAME_ERROR_MESSAGE = ChatColor.RED + "You cannot name your pet like that.";
 
     private static String DEFAULT_PETNAME = ":player's pet";
